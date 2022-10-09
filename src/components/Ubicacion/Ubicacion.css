@@ -1,0 +1,10 @@
+.card-image {
+    height: 150px;
+}
+.btn-container {
+    display: flex;
+    justify-content: center;
+}
+.btn-space {
+    margin-left: 1rem;
+}
