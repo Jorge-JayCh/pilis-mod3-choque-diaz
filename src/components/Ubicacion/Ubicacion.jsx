@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { UbicacionesContext } from "../../context/UbicacionesContext";
 import "./Ubicacion.css";
-
+import { WiStrongWind, WiCelsius, WiThermometer } from "react-icons/wi";
+import { TiLocation, TiLocationOutline } from "react-icons/ti";
 const Ubicacion = ({ ubicacion }) => {
   const { id, imagenURL, nombre, latitud, longitud, temperatura, velocidad } =
     ubicacion;
@@ -9,7 +10,9 @@ const Ubicacion = ({ ubicacion }) => {
   const { ubicaciones, setUbicaciones } = useContext(UbicacionesContext);
 
   const handleEliminar = () => {
-    const updateUbicaciones = ubicaciones.filter((ubicacion) => ubicacion.id !== id);
+    const updateUbicaciones = ubicaciones.filter(
+      (ubicacion) => ubicacion.id !== id
+    );
     setUbicaciones(updateUbicaciones);
     localStorage.setItem("listUbicaciones", JSON.stringify(updateUbicaciones));
   };
@@ -20,11 +23,24 @@ const Ubicacion = ({ ubicacion }) => {
         <img src={imagenURL} className="card-image" alt="Imagen Ubicación" />
         <div className="card-body text-center p-2">
           <h4 className="card-title title-bg">{nombre}</h4>
-          <p className="card-text">{latitud}</p>
-          <p className="card-text">{longitud}</p>
-          <p className="card-text">{temperatura}</p>
-          <p className="card-text">{velocidad}</p>
-          {ubicaciones.length!==0 ? (
+          <p className="card-text">
+            {`Lat : ${latitud}`}
+            <TiLocationOutline className="content-icon" />
+          </p>
+          <p className="card-text">
+            {`Long : ${longitud}`}
+            <TiLocationOutline className="content-icon" />
+          </p>
+          <p className="card-text">
+            {`Temp : ${temperatura}`}
+            <WiCelsius className="content-temp" />
+          </p>
+          <p className="card-text">
+            {`Vel : ${velocidad}`}
+            <WiStrongWind className="content-icon" />
+          </p>
+
+          {ubicaciones.length !== 0 ? (
             <div className="btn-container">
               <a href="#!" className="btn btn-sm btn-info btn-space">
                 Ver mas
@@ -44,4 +60,3 @@ const Ubicacion = ({ ubicacion }) => {
 };
 
 export default Ubicacion;
-
