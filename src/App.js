@@ -5,6 +5,7 @@ import Navigation from "./routes/Navigation/Navigation";
 import UbicacionCreation from "./routes/Ubicacion/UbicacionCreation";
 import { useContext, useEffect } from "react";
 import { UbicacionesContext } from "./context/UbicacionesContext";
+import UbicacionDisplay from "./routes/Ubicacion/UbicacionDisplay";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
           <Route path='/' element={<Navigation />}>
             <Route index element={<Home/>}/>
             <Route path='ubicacion/create' element={<UbicacionCreation/>}/>
-            {/* <Route patch='/ubicacion/:id' element={<UbicacionDisplay/>}/> */}
+            <Route path='ubicacion/:id' element={<UbicacionDisplay/>}/>
           </Route>
         </Routes>
       </div>

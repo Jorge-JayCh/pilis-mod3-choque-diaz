@@ -1,5 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import logoClima from "../../assets/logo-clima.png";
+import { GrAddCircle } from "react-icons/gr";
 import "./Navigation.css";
 
 const Navigation = () => {
@@ -23,13 +24,14 @@ const Navigation = () => {
           {/* {currentUser ? ( */}
           {true ? (
             <Link className="nav-link" to="/ubicacion/create">
-              Nueva Ubicación
+              <GrAddCircle />
+              <span className="text-link">Nueva Ubicación</span>
             </Link>
           ) : (
             <span className="nav-link">Nueva Ubicación</span>
           )}
 
-          {/* {currentUser ? ( */}
+          {/* {currentUser ? (
           {!true ? (
             <span
               className="nav-link"
@@ -41,7 +43,7 @@ const Navigation = () => {
             <Link className="nav-link sign-in" to="/login">
               Iniciar Sesión
             </Link>
-          )}
+          )} */}
         </div>
       </div>
       <Outlet />

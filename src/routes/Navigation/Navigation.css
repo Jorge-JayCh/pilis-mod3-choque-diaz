@@ -37,11 +37,11 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
   }
   
   .nav-link {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     text-decoration: none;
     padding: 10px 15px;
     cursor: pointer;
@@ -52,3 +52,6 @@
     border-radius: 5px;
     /* margin-right: 1rem; */
   }
+  .text-link {
+    margin-left: 10px;
+}
